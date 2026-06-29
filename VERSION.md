@@ -1,5 +1,15 @@
 # elite-control-electron — Version History
 
+## Version: v1.0.1
+**Date:** 2026-06-29
+
+### Changes
+- Improved README.md (replaced Vite template with Elite Control project documentation).
+- Added feature descriptions (OMR, Graduation RSVP, Student Portal).
+- Added tech stack section + development quickstart.
+
+---
+
 ## Version: v1.0.0
 **Date:** 2026-06-29
 
