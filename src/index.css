@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+/* 
+  ✨ Northelite Design System - Light Luxury Edition ✨
+  Typography: Alexandria (Headers & Accents), IBM Plex Sans Arabic (Body)
+  Colors: Pure White, Indigo Slate, Tactical Emerald
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-header: 'Alexandria', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
+  
+  /* Modern Palette */
+  --color-primary: #4f46e5;       /* Indigo 600 */
+  --color-primary-dark: #3730a3;  /* Indigo 800 */
+  --color-emerald: #10b981;       /* Emerald 500 */
+  
+  /* Backgrounds */
+  --color-bg-base: #F8FAFC;       /* Slate 50 */
+  --color-bg-card: #ffffff;       /* Pure White */
+  
+  /* Shadows & Radius */
+  --shadow-premium: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+  --shadow-tactical: 0 20px 60px -15px rgba(79, 70, 229, 0.1);
+  --radius-luxury: 2.5rem;
+  
+  font-family: var(--font-body);
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--color-bg-base);
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.sidebar-drawer-open {
+  overflow: hidden;
+}
+
+#root {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ── Typography Shortcuts ── */
+.font-alexandria { font-family: 'Alexandria', sans-serif; }
+.font-header { font-family: 'Alexandria', sans-serif; }
+
+h1, h2, h3, h4, .font-header {
+  font-family: var(--font-header);
+  letter-spacing: -0.02em;
+}
+
+/* ── Luxury Component Utilities ── */
+.luxury-card {
+  background: var(--color-bg-card);
+  border: 1px solid #f1f5f9;
+  border-radius: var(--radius-luxury);
+  box-shadow: var(--shadow-premium);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .luxury-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-tactical);
+    border-color: rgba(79, 70, 229, 0.1);
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --radius-luxury: 1.5rem;
+  }
+}
+
+/* جداول ومحتوى عريض — تمرير أفقي آمن على الجوال */
+.table-responsive,
+.responsive-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* عناوين الصفحات تتكيّف مع عرض الشاشة */
+.app-page-title {
+  font-size: clamp(1.25rem, 4.5vw, 1.875rem);
+  line-height: 1.25;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
+}
+
+.gold-accent {
+  background: linear-gradient(135deg, #d4af37 0%, #f5d16d 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+/* ── Form Inputs Premium Styling ── */
+input, select, textarea {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 1.25rem !important;
+  padding: 0.85rem 1.25rem !important;
+  font-family: var(--font-body);
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+input:focus, select:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.05) !important;
+  outline: none !important;
+}
+
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+/* ── Premium Sliders (Tactical Range) ── */
+.premium-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  outline: none;
+}
+
+.premium-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary);
+  border: 4px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+  transition: all 0.3s;
+}
+
+.premium-range-success::-webkit-slider-thumb {
+  background: var(--color-emerald);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+/* ── Sophisticated Scrollbar ── */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* ── Global Transitions ── */
+.page-transition {
+  animation: pageFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@theme {
+  --font-header: 'Alexandria', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
+  --color-indigo-luxury: #4f46e5;
+  --border-radius-luxury: 2.5rem;
+}

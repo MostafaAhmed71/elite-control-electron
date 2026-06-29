@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-header: 'Alexandria', sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', sans-serif;
+  --color-royal: #1e1b4b;
+  --color-royal-light: #4338ca;
+  --color-bg-base: #f8fafc;
+  --radius-pro: 1.5rem;
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg-base);
+  font-family: var(--font-body);
+  color: #1e293b;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(67, 56, 202, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(30, 27, 75, 0.03) 0px, transparent 50%);
+}
+
+.luxury-card {
+  background: white;
+  border-radius: var(--radius-pro);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-header {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.certificate-border {
+  position: relative;
+  padding: 2rem;
+}
+
+.certificate-border::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  border: 2px solid var(--color-royal);
+  opacity: 0.1;
+  pointer-events: none;
+  border-radius: 1rem;
+}
+
+.royal-gradient-text {
+  background: linear-gradient(135deg, var(--color-royal) 0%, var(--color-royal-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media print {
+  .print-hidden { display: none !important; }
+  body { background: white !important; }
+  .luxury-card { box-shadow: none !important; border: 1px solid #eee !important; }
+}

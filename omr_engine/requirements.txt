@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+python-multipart
+pydantic
+numpy
+opencv-python
+Pillow
+fpdf
+arabic-reshaper
+python-bidi
+qrcode

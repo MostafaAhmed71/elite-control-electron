@@ -1,0 +1,101 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.packages/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Electron / Build output
+.next/
+out/
+build/
+dist/
+dist-electron/
+release/
+debug_scans/
+
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Secrets
+*-firebase-adminsdk-*.json
+*-service-account.json
+firebase-adminsdk-*.json
+!firebase-adminsdk.example.json
+*credentials*.json
+*serviceAccount*.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+.turbo/
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+
+# Versioning internals (Restore Points are NOT committed)
+Versions/
+*.zip
+*.rar
+
+
+# Excluded embedded sub-projects (have their own repos)
+wppconnect-master/
+graduation-rsvp-standalone/
+omr_engine/venv312/
+omr_engine/dataset/
+omr_engine/temp_elite/
+omr_engine/temp_sheets/
+omr_engine/temp_sheets_custom/
+omr_engine/temp_sheets_elite/
+control/student-portal-standalone/
+
+
+# Large files (>50 MB)
+student-portal-standalone/supabase/old/
+omr_engine/batch_custom_*.pdf
+omr_engine/*.pdf
+omr_engine/dataset/
+
+
+# Very large SQL files
+student-portal-standalone/supabase/omr_results_rows.sql
+student-portal-standalone/supabase/old/omr_results_rows.sql
+student-portal-standalone/supabase/old/fixed/omr_results_import.sql
+
+
+# All PDFs in omr_engine (batch_custom_* are large)
+omr_engine/*.pdf
+
+# All SQL files in student-portal-standalone (sample data is huge)
+student-portal-standalone/supabase/old/
